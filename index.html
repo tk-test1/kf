@@ -1,12 +1,22 @@
 <html>
 <head>
+   <meta charset="utf-8">
  <script type="text/javascript" src="https://www.kf2.pl/components/profile_out/assets/profile_out.js?cb=1.19.80"></script>
+ <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+  <script type="text/javascript">
+   document.addEventListener("DOMContentLoaded", function ()
+    setTimeout(function(){ 
+      $("#SomeId").show();
+    }, 5000);
+});
+ </script>
 </head>
 <body>
 <a href="https://www.kf2.pl/profil-zewnetrzny/10176" class="button button-dark button-center" style="width: 100%;" onclick="voteButton(10176); return false;">postać w jej
 walce</a>
  
  <iframe style="width: 100px; height: 100px;" src="https://www.kf2.pl/profil-zewnetrzny/10176"></iframe>
-  <iframe style="width: 100px; height: 100px;" src="https://www.kf2.pl/profil-zewnetrzny/glos-na-postac/10176"></iframe>
+  <iframe id="SomeId" style="width: 100px; height: 100px; display: none;" src="https://www.kf2.pl/profil-zewnetrzny/glos-na-postac/10176"></iframe>
 </body>
 </html>
