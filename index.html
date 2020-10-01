@@ -1,50 +1,6 @@
 <html>
 <head>
-   <script>
-var findP = false;
-function setPPossible()
-{
-		findP = true;
-}
-
-function loadVoteButton() {
-	ajaxManager.add({
-		contentType: "application/x-www-form-urlencoded;charset=UTF-8",
-		type: "POST",
-		data: {'ref': location.host},
-		url: "/profil-zewnetrzny/sprawdz-odwiedziny",
-		dataType: "json",
-		success: function(data) {
-			if (findP)data.canVote = false;
-			if (data.canVote) $('#voteButton').show();
-			else {
-				$('#noVoteButton').show();
-			}
-		}
-	});
-}
-function voteButton(charID) {
-	ajaxManager.add({
-		contentType: "application/x-www-form-urlencoded;charset=UTF-8",
-		type: "POST",
-		data: {'ref': location.host},
-		url: "/profil-zewnetrzny/glos-na-postac/" + charID,
-		dataType: "json",
-		success: function(data) {
-			if (data.error)
-				jAlert(data.error)
-			if (data.afterVote)
-				$('#voteButton').html(data.afterVote);
-		}
-	});
-}
-$(function()
-{
-	if (findP) $('#voteButton').html('Bramki proxy sÄ zabronione');
-	loadVoteButton();
-});
-
-</script>
+ <script type="text/javascript" src="/components/profile_out/assets/profile_out.js?cb=1.19.80"></script>
 </head>
 <body>
 
